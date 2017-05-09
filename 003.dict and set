@@ -1,0 +1,11 @@
+#字典函数
+dict()
+len()
+hash()
+
+#字典方法（内建函数）
+clear,copy,fromkeys,get,has_key,items,iteritems,keys,iterkeys,popitem,setdefault,update,
+
+#dir({})获得字典完整方法
+
+#集合函数
