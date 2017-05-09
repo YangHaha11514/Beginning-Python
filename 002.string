@@ -1,0 +1,9 @@
+#字符串函数
+raw_input()
+str(),unicode()
+chr(),unichr(),ord()
+
+#字符串方法（内建函数）
+find,join,lower,replace,split,strip,translate
+
+#dir('string')获得完整的字符串方法
