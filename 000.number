@@ -1,9 +1,0 @@
-#数值运算函数
-abs()
-coerce()
-divmod()
-pow()
-round()
-
-#适用于int的函数
-
