@@ -1,4 +1,4 @@
-#dir([]),dir(()),dir(str())获得内建函数和方法
+#dir(list)，dir([]),dir(()),dir(str())获得内建函数和方法
 
 #序列操作符
 ‘标准类型操作符’
@@ -31,7 +31,7 @@ list(),tuple()
 
 #####列表方法
 append,count,extend,index,insesrt,pop,remove,reverse,sort
-'''dir(list) or dir([])可获得类型的方法'''
+
 
 
 #元组操作符
