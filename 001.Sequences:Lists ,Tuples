@@ -1,4 +1,4 @@
-#dir(list)，dir([]),dir(()),dir(str())获得内建函数和方法
+#dir(list)，dir([]);dir(tuple),dir(());dir(str())获得内建函数和方法
 
 #序列操作符
 ‘标准类型操作符’
@@ -37,12 +37,7 @@ append,count,extend,index,insesrt,pop,remove,reverse,sort
 #元组操作符
 ###元组函数
 #####元组方法
-
-
-#字符串操作符
-###字符串函数
-#####字符串方法
-
+'count', 'index'
 
 
 
