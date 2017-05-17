@@ -1,5 +1,5 @@
 #dir('string')获得完整的字符串方法
-
+#operator模块查看操作符详情
 
 #字符串操作符
 #标准类型操作符
@@ -11,13 +11,21 @@
 #重复操作符：*
 #格式化操作符：%
 
-
-
 ###字符串函数
+#通用序列函数：cmp(),len(),max(),min(),enumerate(),zip()
+#字符串函数
 raw_input()
 str(),unicode()
 chr(),unichr(),ord()
 
 #####字符串方法（内建函数）
-find,join,lower,replace,split,strip,translate
+'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 
+'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isdecimal', 'isdigit', 
+'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 
+'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'replace', 'rfind', 'rindex', 
+'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 
+'swapcase', 'title', 'translate', 'upper', 'zfill'
 
+#Unicode相关知识
+
+#str的相关模块
