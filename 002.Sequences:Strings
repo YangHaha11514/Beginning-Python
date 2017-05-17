@@ -1,9 +1,23 @@
-#字符串函数
+#dir('string')获得完整的字符串方法
+
+
+#字符串操作符
+#标准类型操作符
+#序列切片操作符：[],[:]
+#成员操作符：in,not in
+#连接符：+
+#编译时字符串连接：源码中把几个字符串连在一起写，e.g.foo='Hello''World'
+#普通字符串里转化为Unicode字符串：普通字符串和Unicode字符串做连接处理
+#重复操作符：*
+#格式化操作符：%
+
+
+
+###字符串函数
 raw_input()
 str(),unicode()
 chr(),unichr(),ord()
 
-#字符串方法（内建函数）
+#####字符串方法（内建函数）
 find,join,lower,replace,split,strip,translate
 
-#dir('string')获得完整的字符串方法
