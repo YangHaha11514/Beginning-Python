@@ -17,6 +17,17 @@ rang(start,end,step),xrang(start,end,step) #前者生成列表，后者生成可
 sorted（），zip（）#返回列表
 reversed(),enumerate()#返回迭代器
 
-#break语句：外部条件触发（一般if语句检查），从循环中退出
+#break语句：外部条件触发（一般if语句检查），从整个循环中退出。多层循环，最内部break,结束最内层循环！！！
 #可用于while和for循环
 
+#continue语句：终止当前循环，并忽略剩余的语句，然后回到循环的顶端。多层循环，最内部continue,返回最内层循环起始！！！
+#pass语句
+
+#else语句可以在while和for循环中使用，循环完成后执行
+
+
+
+
+#迭代器
+#列表解析
+#生成器
