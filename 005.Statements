@@ -1,1 +1,22 @@
+#类似于dir(list),help(zip)的获取语句关键词的详细信息的语句
+
+#if语句：if本身，判断结果真假的条件表达式（and，or，not实现多重判断条件），表达式为真或非零时执行的代码块
+#if...elif（0个或1个或多个）...else
+#多个elif语句，可用1、序列和成员关系操作简化，2、字典，搜索快速
+#三元操作符：x if C else y(C为真或非零，执行x,否则y)
+
+#while语句：条件为真时循环执行代码块
+#计数循环和无限循环
+
+#for语句：
+for iter_var in iterable:
+    suite_to_repeat
+#用于序列：序列项迭代，序列索引迭代，项和索引同时迭代（enumerate（））
+#用于迭代器类型：
+rang(start,end,step),xrang(start,end,step) #前者生成列表，后者生成可迭代对象（Python2，非序列非迭代器）
+sorted（），zip（）#返回列表
+reversed(),enumerate()#返回迭代器
+
+#break语句：外部条件触发（一般if语句检查），从循环中退出
+#可用于while和for循环
 
