@@ -16,3 +16,8 @@
 
 
 #005章。iterable，iterator,callable的区别
+#005章。迭代器每次调用next()函数时是如何确定返回第几个对象的？？迭代器对象中有一个计数规则？？？如下的魔法方法？？？
+'''
+|  __reduce__(...)
+|      Return state information for pickling.
+'''
