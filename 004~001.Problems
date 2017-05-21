@@ -21,3 +21,5 @@
 |  __reduce__(...)
 |      Return state information for pickling.
 '''
+#005章。迭代可变对象时尽量不修改它们！！理由同上相关？？如果需要边迭代，边修改，如何实现？？使用副本！！
+#005章。itertools模块
