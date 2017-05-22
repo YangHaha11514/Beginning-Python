@@ -1,0 +1,17 @@
+#打开或创建文件对象：
+#file_object=open(file_name,access_mode='r',bufferinng=-1)
+========= ===============================================================
+    Character Meaning
+    --------- ---------------------------------------------------------------
+    'r'       open for reading (default)
+    'w'       open for writing, truncating the file first
+    'x'       create a new file and open it for writing
+    'a'       open for writing, appending to the end of the file if it exists
+    'b'       binary mode
+    't'       text mode (default)
+    '+'       open a disk file for updating (reading and writing)
+    'U'       universal newline mode (deprecated)
+    ========= ===============================================================
+#open()函数返回文件对象。 Open file and return a stream
+    
+#文件方法
