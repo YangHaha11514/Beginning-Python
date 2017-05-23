@@ -15,3 +15,16 @@
 #open()函数返回文件对象。 Open file and return a stream
     
 #文件方法
+read(self, size=-1, /)——读取给定字节数，默认-1代表读取至行结束符
+readline(self, size=-1, /)—— 
+
+f=open('D:\somefile.txt','r+'),r+模式下才能使用readline方法。为什么？？？
+其它模式下，使用readline方法，文本消失
+
+
+write(self, text, /)——返回写入的字符数
+
+ seek(self, cookie, whence=0, /)
+ 
+ for eachLine in f:
+ for eachLine in f.readline():
