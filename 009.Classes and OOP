@@ -1,0 +1,18 @@
+#类的创建：
+class ClassName(bases):
+    class_suite
+    
+#类属性：数据属性，函数属性（方法）
+#binding:方法必须绑定到一个实例才能直接被调用
+#查看类属性：dir(ClassName),ClassName.__dict__(类的数据属性)
+#特殊的类属性：C.__name__,C.__doc__,C.__bases__,C.__dict__,C.__module__,C.__class__
+
+#实例的创建
+mc=ClassName()
+
+#实例属性：
+
+#实例属性vs类属性
+
+#特殊方法：特殊情况下被Python调用，几乎没有直接调用它们的必要
+
