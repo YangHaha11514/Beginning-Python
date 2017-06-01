@@ -9,18 +9,30 @@
 #类的创建：
 class ClassName(bases):
     class_suite
+#类属性
+#类的方法：第一个参数必须为self，类不能直接调用方法，方法必须与实例绑定
+#查看类属性：dir(ClassName),ClassName.__dict__ 
+#特殊的类方法：C.__name__,C.__doc__,C.__bases__,C.__dict__,C.__module__,C.__class__
     
-#类属性：数据属性，函数属性（方法）
-#binding:方法必须绑定到一个实例才能直接被调用
-#查看类属性：dir(ClassName),ClassName.__dict__(类的数据属性)
-#特殊的类属性：C.__name__,C.__doc__,C.__bases__,C.__dict__,C.__module__,C.__class__
-
-#实例的创建
-mc=ClassName()
-
-#实例属性：
+#实例化：1-初始化类mc=ClassName()，2-检测__init__方法
+#构造器方法：__init__(),__new__();结构器：__del__()
+class InstCt():
+    count=0
+    def __init__(self):
+        InstCt.count+=1
+    def __del__(self):
+        InstCt.count-=1
+    def howmany(self):
+        return(InstCt.count)
+#实例属性：__init__()中设置
+#查看实例属性:dir();__dict__ 
+#特殊的实例方法：I.__class__;I.__dict__
 
 #实例属性vs类属性
+#类访问并更新类属性
+#实例访问类属性（类属性不可变，类属性为词典等可变对象）
+#类属性与实例属性同名但不完全相同（背后的基础原理？？？）
 
-#特殊方法：特殊情况下被Python调用，几乎没有直接调用它们的必要
+
+
 
