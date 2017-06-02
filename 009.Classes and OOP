@@ -25,7 +25,7 @@ class InstCt():
     def howmany(self):
         return(InstCt.count)
 #实例属性：__init__()中设置
-#查看实例属性:dir();__dict__ 
+#查看实例属性:dir();__dict__,var()
 #特殊的实例方法：I.__class__;I.__dict__
 
 #实例属性vs类属性
@@ -70,7 +70,12 @@ class SortedKeyDict(dict):
 
 #多重继承，及其解析顺序？？？？？
     
+#类、实例等内建函数：
+#issubclass(sub,sup),isinstance(obj1,obj2)
+#hasattr(),getattr(),setattr(),delattr()
+#dir(),super(),var()
 
+#用特殊方法定制类：
 
 
 
