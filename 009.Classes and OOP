@@ -15,7 +15,7 @@ class ClassName(bases):
 #特殊的类方法：C.__name__,C.__doc__,C.__bases__,C.__dict__,C.__module__,C.__class__
     
 #实例化：1-初始化类mc=ClassName()，2-检测__init__方法
-#构造器方法：__init__(),__new__();结构器：__del__()
+#构造器方法：__init__(),__new__()（标准类型的构造方法）;结构器：__del__()
 class InstCt():
     count=0
     def __init__(self):
@@ -38,6 +38,41 @@ class InstCt():
 #类MyClass及其实例mc,无法通过MyClass.foo()调用，可以mc.foo()调用。foo()方法绑定到了实例mc上
 #调用非绑定方法：主要应用场景——派生子类，覆盖掉父类的构造方法，先调用父类的构造方法以重用代码
 #可否用在覆盖普通的父类方法，先调用该父类方法以重用代码？？？？？
+
+#组合；子类和派生
+#重用基类的代码：调用未绑定的基类方法（普通方法或特殊方法-构造方法），或super()函数
+class P(object):
+    def __init__(self):
+        print("Calling P's constructor")
+    def foo(self):
+        print("Hi,I'm P-foo")
+        
+class C(P):
+    def __init__(self):
+        P.__init__(self)#or super(C,self).__init__()
+        print("Calling C's constructor")
+    def foo(self):
+        P.foo(self)#or super(C,self).foo()
+        print("Hi,I'm C-foo")
+        
+#从标准类中派生
+class RoundFloat(float):
+    def __new__(cls,val):
+        return(float.__new__(cls,round(val,2)))#or return(super(RoundFloat,cls).__new__(cls.round(val,2)))
+#注意其中的构造函数为__new__(),及代表自身的关键词cls
+#需要理解标准类的构造方法__new__()的定义及动作
+
+class SortedKeyDict(dict):
+    def keys(self):
+        return(sorted(super(SortedKeyDict,self).keys())
+#重写dict的keys()方法
+#dict()创建词典的用法及各种方法，SortedKeyDict同样可以调用
+
+#多重继承，及其解析顺序？？？？？
+    
+
+
+
 
 #静态方法和类方法？？？？？？？
 
