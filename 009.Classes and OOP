@@ -54,19 +54,29 @@ class C(P):
     def foo(self):
         P.foo(self)#or super(C,self).foo()
         print("Hi,I'm C-foo")
-        
-#从标准类中派生
+
+#定制类
+#1.从标准类中派生，或模拟标准类
+#1.1.调用父类的构造方法
 class RoundFloat(float):
     def __new__(cls,val):
         return(float.__new__(cls,round(val,2)))#or return(super(RoundFloat,cls).__new__(cls.round(val,2)))
 #注意其中的构造函数为__new__(),及代表自身的关键词cls
 #需要理解标准类的构造方法__new__()的定义及动作
-
-class SortedKeyDict(dict):
+#1.2.重写标准类的一般方法
+class SortedKeyDict(dict):#重写dict的keys()方法
     def keys(self):
-        return(sorted(super(SortedKeyDict,self).keys())
-#重写dict的keys()方法
-#dict()创建词典的用法及各种方法，SortedKeyDict同样可以调用
+        return(sorted(super(SortedKeyDict,self).keys())#dict()创建词典的用法及各种方法，SortedKeyDict同样可以调用
+#1.3.重写标准类的特殊方法
+#实现序列或映射规则：__len__(self),__getitem__(self,key),__setitem__(self,key,value),__delitem__(self,key)
+#1.4.迭代器规则：
+
+#2.重载操作符
+
+
+
+
+
 
 #多重继承，及其解析顺序？？？？？
     
@@ -75,7 +85,7 @@ class SortedKeyDict(dict):
 #hasattr(),getattr(),setattr(),delattr()
 #dir(),super(),var()
 
-#用特殊方法定制类：
+
 
 
 
