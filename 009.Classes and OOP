@@ -74,20 +74,71 @@ class RoundFloatManual(object):
     def __init__(self,val):
         assert isinstance(val,float),\
         'value must be a float'#输入参数必须为浮点数
-        self.value=round(val,2)#返回两位小数
-        
+        self.value=round(val,2)#返回两位小数    
     def __str__(self):#可以使用print函数表示
         return('%.2f'%self.value)
     __repr__=__str__#可以字符串对象表示，且和print结果相同
 
 #1.4.迭代器规则：
+class AnyIter(object):
+    def __init__(self,data,safe=False):
+        self.safe=safe
+        self.iter=iter(data)
+    def __iter__(self):
+        return(self)
+    def next(self,howmany=1):
+        retval=[]
+        for eachItem in range(howmany):
+            try:
+                retval.append(self.iter.next())
+            except StopIteration:
+                if self.safe:
+                    break
+                else:
+                    raise
+        return(retval)
 
 #2.重载操作符
-
-
-
-
-
+class Time60(object):
+    def __init__(self,hr,min):
+        self.hr=hr
+        self.min=min
+    def __str__(self):
+        return('%d:%d'%(self.hr,self.min))
+    __repr__=__str__
+    def __add__(self,other):
+        return(self.__class__(self.hr+other.hr,self.min+other.min))
+    def __iadd__(self,other):
+        self.hr+=other.hr
+        self.min+=other.min
+        return(self)
+       
+#3.多类型定制：
+class NumStr(object):
+    def __init__(self,num=0,string=''):
+        self._num=num
+        self._string=string
+    def __str__(self):
+        return('[%d::%d]%(self._num,self._string))
+    __repr__=__str__
+    def __add__(self,other)：
+        if isinstance(other,NumStr):
+            return(self.__class__(self._num+other._num,self._string+other._string))
+        else:
+            raise TypeError
+    def __mul__(self,num):
+        if isinstance(num,int):
+            return(self.__class__(self._num*num,self._string*num))
+        else:
+            raise TypeError
+    def __nonzero__(self):
+        return(self._num or len(self._string))
+    def _norm_cval(self,cmpres):
+        return(cmp(cmpres,0))
+    def __cmp__(self,other):
+        return(self._norm_cval(cmp(self._num+other._num))+self._norm_cval(cmp(self._string+other._string)))
+ 
+            
 
 #多重继承，及其解析顺序？？？？？
     
