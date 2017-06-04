@@ -116,27 +116,28 @@ class Time60(object):
 #3.多类型定制：
 class NumStr(object):
     def __init__(self,num=0,string=''):
-        self._num=num
-        self._string=string
+        self.__num=num
+        self.__string=string
     def __str__(self):
-        return('[%d::%d]%(self._num,self._string))
+        return('[%d::"%s"]'%(self.__num,self.__string))
     __repr__=__str__
-    def __add__(self,other)：
+    def __add__(self,other):
         if isinstance(other,NumStr):
-            return(self.__class__(self._num+other._num,self._string+other._string))
+            return(self.__class__(self.__num+other.__num,self.__string+other.__string))
         else:
             raise TypeError
     def __mul__(self,num):
         if isinstance(num,int):
-            return(self.__class__(self._num*num,self._string*num))
+            return(self.__class__(self.__num*num,self.__string*num))
         else:
             raise TypeError
     def __nonzero__(self):
-        return(self._num or len(self._string))
-    def _norm_cval(self,cmpres):
+        return(self.__num or len(self.__string))
+    def __norm_cval(self,cmpres):
         return(cmp(cmpres,0))
     def __cmp__(self,other):
-        return(self._norm_cval(cmp(self._num+other._num))+self._norm_cval(cmp(self._string+other._string)))
+        return(self.__norm_cval(cmp(self.__num+other.__num))+self.__norm_cval(cmp(self.__string+other.__string)))
+
  
             
 
@@ -147,6 +148,10 @@ class NumStr(object):
 #hasattr(),getattr(),setattr(),delattr()
 #dir(),super(),var()
 
+#私有化：
+#包装：
+#新式类的高级特性
+#相关模块
 
 
 
