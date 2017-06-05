@@ -148,9 +148,64 @@ class NumStr(object):
 #hasattr(),getattr(),setattr(),delattr()
 #dir(),super(),var()
 
-#私有化：
-#包装：
+#私有化：双下划线（__）和单下划线（_）
+
+#包装：对已存在的类型进行定制；授权：更新的功能由新类的某部分处理，已存在功能授权给对象的默认属性
+#授权关键点在于覆盖__getattr__()方法，包含一个对getattr()内建函数的调用
+class WrapMe(object):
+    def __init__(self,obj):
+        self.__data=obj
+    def get(self):#删除包装并返回原始对象
+        return(self.__data)
+    def __repr__(self):
+        return('self.__data)
+    def __str__(self):
+        return(str(self.__data))
+    def __getattr__(self,attr):
+        return(getattr(self.__data,attr))
+
+from time import time,ctime        
+class TimeWrapMe(object):
+    def __init__(self,obj):
+        self.__data=obj
+        self.__ctime=self.__mtime=self.__atime=time()
+    def get(self):
+        self.__atime=time()
+        return(self.__data)
+    def gettimeval(self,t_type):
+        if not isinstance(t_type,str) or t_type[0] not in 'cma':
+            raise TypeError
+        return(getattr(self,'_%s__%stime'%(self.__class__.__name__,t_type[0])))
+    def set(self,obj):
+        self.__data=obj
+        self.__mtime=self.__atime=time()
+    def __repr__(self):
+        self.__atime=time()
+        return('self.__data')
+    def __str__(self):
+        self.__atime=time()
+        return(str(self.__data))
+    def __getattr__(self,attr):
+        self.__atime=time()
+        return(getattr(self.__data,attr))
+        
+        
+        
+        
+        
+        
+    
+
+
+
+
 #新式类的高级特性
+#__slots__类属性：
+#__getattribute__特殊方法：
+#描述符descriptors:包含__get__(),__set__(),__delete__()三者中至少一个，三者充当描述符协议的作用
+#没有__set__()方法为非数据描述符，同时__set__(),__get__()数据描述符
+#def __get__(self,obj,type=None)->value;def __set__(self,obj,val)->None;def __del__(self,obj)->None
+
 #相关模块
 
 
