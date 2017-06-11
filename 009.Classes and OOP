@@ -206,10 +206,44 @@ class TimeWrapMe(object):
 #没有__set__()方法为非数据描述符，同时__set__(),__get__()数据描述符
 #def __get__(self,obj,type=None)->value;def __set__(self,obj,val)->None;def __del__(self,obj)->None
 
-#相关模块
+
 
 
 
 
 #静态方法和类方法？？？？？？？
+1.普通方法必须以实例作为第一个参数，通常命名为self
+2.classmethod，以类本身作为第一个参数，通常命名为cls
+3.staticmethod，不需要类或实例作为第一个参数
+
+class Demo():
+    def normmeth(*args):
+		return(args)
+        
+    @classmethod
+    def klassmeth(*args):
+        return(args)
+        
+    @staticmethod
+    def statmeth(*args):
+        return(args)
+
+#分别通过实例和类调用三种方法
+Demo().normmeth()#返回(<__main__.Demo object at 0x000001801332EF98>,)
+Demo().normmeth('spam')#返回(<__main__.Demo object at 0x000001801332EF98>,'spam')
+
+Demo.klassmeth()#返回(<class '__main__.Demo'>,)
+Demo.klassmeth('spam')#返回(<class '__main__.Demo'>,'spam')
+Demo().klassmeth()#返回(<class '__main__.Demo'>,)
+Demo().klassmeth('spam')#返回(<class '__main__.Demo'>,'spam')
+
+Demo.staticmeth()#返回空元组()
+Demo.staticmeth('spam')#返回('spam',)
+Demo().staticmeth()#返回空元组()
+Demo().staticmeth('spam')#返回('spam',)
+
+
+#相关模块
+
+
 
